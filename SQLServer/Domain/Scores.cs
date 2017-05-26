@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -10,7 +11,7 @@ namespace Sample.CustomerService.Domain {
         public virtual string Testid { get; set; }
         public virtual string Studentid { get; set; }
         public virtual Tests Tests { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual byte Score { get; set; }
         #region NHibernate Composite Key Requirements
         public override bool Equals(object obj) {

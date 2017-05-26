@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -10,12 +11,12 @@ namespace Sample.CustomerService.Domain {
         public virtual int Productid { get; set; }
         public virtual Suppliers Suppliers { get; set; }
         public virtual Categories Categories { get; set; }
-        [NotNullNotEmpty]
-        [Length(40)]
+        [Required]
+        [StringLength(40)]
         public virtual string Productname { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual decimal Unitprice { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual bool Discontinued { get; set; }
     }
 }

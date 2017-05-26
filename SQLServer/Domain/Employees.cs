@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -12,37 +13,37 @@ namespace Sample.CustomerService.Domain {
         }
         public virtual int Empid { get; set; }
         public virtual Employees EmployeesVal { get; set; }
-        [NotNullNotEmpty]
-        [Length(20)]
+        [Required]
+        [StringLength(20)]
         public virtual string Lastname { get; set; }
-        [NotNullNotEmpty]
-        [Length(10)]
+        [Required]
+        [StringLength(10)]
         public virtual string Firstname { get; set; }
-        [NotNullNotEmpty]
-        [Length(30)]
+        [Required]
+        [StringLength(30)]
         public virtual string Title { get; set; }
-        [NotNullNotEmpty]
-        [Length(25)]
+        [Required]
+        [StringLength(25)]
         public virtual string Titleofcourtesy { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual DateTime Birthdate { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual DateTime Hiredate { get; set; }
-        [NotNullNotEmpty]
-        [Length(60)]
+        [Required]
+        [StringLength(60)]
         public virtual string Address { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string City { get; set; }
-        [Length(15)]
+        [StringLength(15)]
         public virtual string Region { get; set; }
-        [Length(10)]
+        [StringLength(10)]
         public virtual string Postalcode { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string Country { get; set; }
-        [NotNullNotEmpty]
-        [Length(24)]
+        [Required]
+        [StringLength(24)]
         public virtual string Phone { get; set; }
         public virtual IList<Employees> Employees { get; set; }
     }

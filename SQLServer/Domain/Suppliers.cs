@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -11,32 +12,32 @@ namespace Sample.CustomerService.Domain {
 			Products = new List<Products>();
         }
         public virtual int Supplierid { get; set; }
-        [NotNullNotEmpty]
-        [Length(40)]
+        [Required]
+        [StringLength(40)]
         public virtual string Companyname { get; set; }
-        [NotNullNotEmpty]
-        [Length(30)]
+        [Required]
+        [StringLength(30)]
         public virtual string Contactname { get; set; }
-        [NotNullNotEmpty]
-        [Length(30)]
+        [Required]
+        [StringLength(30)]
         public virtual string Contacttitle { get; set; }
-        [NotNullNotEmpty]
-        [Length(60)]
+        [Required]
+        [StringLength(60)]
         public virtual string Address { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string City { get; set; }
-        [Length(15)]
+        [StringLength(15)]
         public virtual string Region { get; set; }
-        [Length(10)]
+        [StringLength(10)]
         public virtual string Postalcode { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string Country { get; set; }
-        [NotNullNotEmpty]
-        [Length(24)]
+        [Required]
+        [StringLength(24)]
         public virtual string Phone { get; set; }
-        [Length(24)]
+        [StringLength(24)]
         public virtual string Fax { get; set; }
         public virtual IList<Products> Products { get; set; }
     }

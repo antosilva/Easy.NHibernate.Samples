@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -11,11 +12,11 @@ namespace Sample.CustomerService.Domain {
         public virtual int Productid { get; set; }
         public virtual Orders Orders { get; set; }
         public virtual Products Products { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual decimal Unitprice { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual short Qty { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual double Discount { get; set; }
         #region NHibernate Composite Key Requirements
         public override bool Equals(object obj) {

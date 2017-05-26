@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -14,28 +15,28 @@ namespace Sample.CustomerService.Domain {
         public virtual Customers Customers { get; set; }
         public virtual Employees Employees { get; set; }
         public virtual Shippers Shippers { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual DateTime Orderdate { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual DateTime Requireddate { get; set; }
         public virtual DateTime? Shippeddate { get; set; }
-        [NotNullNotEmpty]
+        [Required]
         public virtual decimal Freight { get; set; }
-        [NotNullNotEmpty]
-        [Length(40)]
+        [Required]
+        [StringLength(40)]
         public virtual string Shipname { get; set; }
-        [NotNullNotEmpty]
-        [Length(60)]
+        [Required]
+        [StringLength(60)]
         public virtual string Shipaddress { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string Shipcity { get; set; }
-        [Length(15)]
+        [StringLength(15)]
         public virtual string Shipregion { get; set; }
-        [Length(10)]
+        [StringLength(10)]
         public virtual string Shippostalcode { get; set; }
-        [NotNullNotEmpty]
-        [Length(15)]
+        [Required]
+        [StringLength(15)]
         public virtual string Shipcountry { get; set; }
         public virtual IList<Orderdetails> Orderdetails { get; set; }
     }

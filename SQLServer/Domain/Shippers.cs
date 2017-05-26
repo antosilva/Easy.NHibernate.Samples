@@ -1,7 +1,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Sample.CustomerService.Domain {
@@ -11,11 +12,11 @@ namespace Sample.CustomerService.Domain {
 			Orders = new List<Orders>();
         }
         public virtual int Shipperid { get; set; }
-        [NotNullNotEmpty]
-        [Length(40)]
+        [Required]
+        [StringLength(40)]
         public virtual string Companyname { get; set; }
-        [NotNullNotEmpty]
-        [Length(24)]
+        [Required]
+        [StringLength(24)]
         public virtual string Phone { get; set; }
         public virtual IList<Orders> Orders { get; set; }
     }
